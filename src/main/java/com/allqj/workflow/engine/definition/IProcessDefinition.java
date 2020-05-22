@@ -2,7 +2,7 @@ package com.allqj.workflow.engine.definition;
 
 import com.allqj.workflow.engine.element.INode;
 import com.allqj.workflow.engine.element.IStartNode;
-import com.allqj.workflow.engine.element.Transition;
+import com.allqj.workflow.engine.element.ITransition;
 import com.allqj.workflow.infrastructure.repository.dataobj.ProcessDefinitionDO;
 
 public interface IProcessDefinition {
@@ -20,14 +20,14 @@ public interface IProcessDefinition {
     IStartNode getStartNode();
 
     /**
-     * 获取下一连线
+     * 获取连线信息
      *
      * @return 连线信息
      */
-    Transition getNextTransitionByNodeId(String nodeId);
+    ITransition getTransitionById(String nodeId);
 
     /**
-     * 获取下一节点
+     * 获取节点信息
      *
      * @param nodeId 下一节点id
      * @return 节点信息

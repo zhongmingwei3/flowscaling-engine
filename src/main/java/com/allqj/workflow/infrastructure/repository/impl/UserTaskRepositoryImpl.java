@@ -4,6 +4,6 @@ import com.allqj.workflow.infrastructure.repository.IUserTaskRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class IUserTaskRepositoryImpl implements IUserTaskRepository {
+public class UserTaskRepositoryImpl implements IUserTaskRepository {
 
 }

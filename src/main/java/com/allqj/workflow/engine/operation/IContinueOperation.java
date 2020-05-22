@@ -6,5 +6,5 @@ package com.allqj.workflow.engine.operation;
  * @author Zhong
  * @since 1.0
  */
-public interface IStartOperation extends IOperation {
+public interface IContinueOperation extends IOperation {
 }

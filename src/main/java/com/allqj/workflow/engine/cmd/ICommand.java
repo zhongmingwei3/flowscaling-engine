@@ -1,5 +1,5 @@
 package com.allqj.workflow.engine.cmd;
 
-public interface Command<T, E> {
+public interface ICommand<T, E> {
     T execute(E e);
 }

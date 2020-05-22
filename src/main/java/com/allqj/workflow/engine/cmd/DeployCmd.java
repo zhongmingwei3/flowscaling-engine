@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 // TODO: 2020/5/18 改造：bean创建统一到配置
 @Component
-public class DeployCmd implements Command<IProcessDeployment, String> {
+public class DeployCmd implements ICommand<IProcessDeployment, String> {
 
     private final ProcessRepository processRepository;
     private final DeploymentRepository deploymentRepository;

@@ -6,7 +6,7 @@ package com.allqj.workflow.engine.agenda;
  * @author Zhong
  * @sine 1.0
  */
-public class WorkFlowAgendaUtil {
+public class WorkFlowAgendaHelper {
 
     private static final ThreadLocal<IWorkFlowAgenda> workFlowAgendaThreadLocal = new ThreadLocal<IWorkFlowAgenda>();
 
@@ -14,6 +14,10 @@ public class WorkFlowAgendaUtil {
      * 获取当前线程的队列
      */
     public static IWorkFlowAgenda getAgenda() {
-        return workFlowAgendaThreadLocal.get();
+        IWorkFlowAgenda workFlowAgenda = workFlowAgendaThreadLocal.get();
+        if (workFlowAgenda == null) {
+            // TODO: 2020/5/22 创建agenda
+        }
+        return workFlowAgenda;
     }
 }

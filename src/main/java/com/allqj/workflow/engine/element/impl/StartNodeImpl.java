@@ -1,8 +1,8 @@
 package com.allqj.workflow.engine.element.impl;
 
-import com.allqj.workflow.engine.element.INode;
+import com.allqj.workflow.engine.element.IStartNode;
 
-public class StartNodeImpl implements INode {
+public class StartNodeImpl implements IStartNode {
     @Override
     public String getNext() {
         return null;

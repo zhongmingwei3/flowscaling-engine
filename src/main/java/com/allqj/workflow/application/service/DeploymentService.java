@@ -1,6 +1,6 @@
 package com.allqj.workflow.application.service;
 
-import com.allqj.workflow.engine.cmd.Command;
+import com.allqj.workflow.engine.cmd.ICommand;
 import com.allqj.workflow.engine.deployment.IProcessDeployment;
 import com.allqj.workflow.engine.definition.IProcessDefinition;
 import com.allqj.workflow.engine.deployment.ProcessDeployment;
@@ -18,12 +18,12 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DeploymentService {
-    private final Command<IProcessDeployment, String> deployCmd;
+    private final ICommand<IProcessDeployment, String> deployCmd;
     private final ProcessRepository processRepository;
     private final DeploymentRepository deploymentRepository;
     private final IDeployCache deployCache;
 
-    public DeploymentService(Command<IProcessDeployment, String> deployCmd,
+    public DeploymentService(ICommand<IProcessDeployment, String> deployCmd,
                              ProcessRepository processRepository,
                              DeploymentRepository deploymentRepository,
                              IDeployCache deployCache) {
