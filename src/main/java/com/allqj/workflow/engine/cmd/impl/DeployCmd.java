@@ -1,5 +1,6 @@
-package com.allqj.workflow.engine.cmd;
+package com.allqj.workflow.engine.cmd.impl;
 
+import com.allqj.workflow.engine.cmd.ICommand;
 import com.allqj.workflow.engine.deployment.IProcessDeployment;
 import com.allqj.workflow.engine.definition.IProcessDefinition;
 import com.allqj.workflow.engine.deployment.ProcessDeployment;

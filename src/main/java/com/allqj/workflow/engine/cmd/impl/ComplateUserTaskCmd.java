@@ -1,5 +1,6 @@
-package com.allqj.workflow.engine.cmd;
+package com.allqj.workflow.engine.cmd.impl;
 
+import com.allqj.workflow.engine.cmd.ICommand;
 import com.allqj.workflow.infrastructure.repository.IUserTaskRepository;
 
 /**

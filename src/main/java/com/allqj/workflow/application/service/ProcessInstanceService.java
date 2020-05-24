@@ -2,7 +2,7 @@ package com.allqj.workflow.application.service;
 
 import com.allqj.workflow.engine.runtime.IProcessInstance;
 import com.allqj.workflow.infrastructure.repository.IDeployCache;
-import com.allqj.workflow.engine.cmd.StartProcessInstanceCmd;
+import com.allqj.workflow.engine.cmd.impl.StartProcessInstanceCmd;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 

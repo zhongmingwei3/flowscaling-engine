@@ -1,6 +1,6 @@
 package com.allqj.workflow.configure;
 
-import com.allqj.workflow.engine.cmd.StartProcessInstanceCmd;
+import com.allqj.workflow.engine.cmd.impl.StartProcessInstanceCmd;
 import com.allqj.workflow.infrastructure.repository.IDeployCache;
 import com.allqj.workflow.infrastructure.repository.IUserTaskRepository;
 import org.springframework.context.annotation.Bean;
