@@ -24,15 +24,8 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public IElementOperationBeanFactory elementBeanFactory() {
-        // TODO: 2020/5/18 元素bean工厂bean
-        return null;
-    }
-
-    @Bean
     public StartProcessInstanceCmd startProcessInstanceCmd(IUserTaskRepository userTaskRepository,
-                                                           IDeployCache deployCache,
-                                                           IElementOperationBeanFactory nodeBeanFactory) {
+                                                           IDeployCache deployCache) {
         // TODO: 2020/5/18 启动流程实例bean
         return null;
     }
