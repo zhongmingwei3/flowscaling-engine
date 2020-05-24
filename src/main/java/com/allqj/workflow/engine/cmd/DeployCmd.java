@@ -4,7 +4,7 @@ import com.allqj.workflow.engine.deployment.IProcessDeployment;
 import com.allqj.workflow.engine.definition.IProcessDefinition;
 import com.allqj.workflow.engine.deployment.ProcessDeployment;
 import com.allqj.workflow.infrastructure.repository.IDeployCache;
-import com.allqj.workflow.infrastructure.repository.DeploymentRepository;
+import com.allqj.workflow.infrastructure.repository.IDeploymentRepository;
 import com.allqj.workflow.infrastructure.repository.ProcessRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,10 +20,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class DeployCmd implements ICommand<IProcessDeployment, String> {
 
     private final ProcessRepository processRepository;
-    private final DeploymentRepository deploymentRepository;
+    private final IDeploymentRepository deploymentRepository;
     private final IDeployCache deployCache;
 
-    public DeployCmd(ProcessRepository processRepository, DeploymentRepository deploymentRepository, IDeployCache deployCache) {
+    public DeployCmd(ProcessRepository processRepository, IDeploymentRepository deploymentRepository, IDeployCache deployCache) {
         this.processRepository = processRepository;
         this.deploymentRepository = deploymentRepository;
         this.deployCache = deployCache;

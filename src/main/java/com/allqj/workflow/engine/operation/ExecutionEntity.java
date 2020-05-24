@@ -13,18 +13,18 @@ public class ExecutionEntity {
     /**
      * 将要执行的元素
      */
-    private IElement element;
+    private IElement currentElement;
     /**
      * 已经部署的流程定义
      */
     private IProcessDefinition processDefinition;
 
-    public void setCurrentElement(IElement element) {
-        this.element = element;
+    public void setCurrentElement(IElement currentElement) {
+        this.currentElement = currentElement;
     }
 
-    public IElement getElement() {
-        return element;
+    public IElement getCurrentElement() {
+        return currentElement;
     }
 
     public void setProcessDefinition(IProcessDefinition processDefinition) {

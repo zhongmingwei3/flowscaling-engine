@@ -1,11 +1,9 @@
 package com.allqj.workflow.engine.cmd;
 
-import com.allqj.workflow.engine.agenda.WorkFlowAgendaHelper;
 import com.allqj.workflow.engine.definition.IProcessDefinition;
 import com.allqj.workflow.engine.element.IStartNode;
-import com.allqj.workflow.engine.operation.IContinueOperation;
 import com.allqj.workflow.engine.operation.ExecutionEntity;
-import com.allqj.workflow.engine.operation.impl.StartOperation;
+import com.allqj.workflow.engine.operation.IStartOperation;
 import com.allqj.workflow.engine.runtime.IProcessInstance;
 import com.allqj.workflow.infrastructure.repository.IDeployCache;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,12 +17,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class StartProcessInstanceCmd implements ICommand<IProcessInstance, String> {
 
     private final IDeployCache deployCache;
-    private final IContinueOperation continueOperation;
+    private final IStartOperation startOperation;
 
     public StartProcessInstanceCmd(IDeployCache deployCache,
-                                   IContinueOperation continueOperation) {
+                                   IStartOperation startOperation) {
         this.deployCache = deployCache;
-        this.continueOperation = continueOperation;
+        this.startOperation = startOperation;
     }
 
     @Transactional
@@ -44,8 +42,8 @@ public class StartProcessInstanceCmd implements ICommand<IProcessInstance, Strin
         executionEntity.setCurrentElement(startNode);
         executionEntity.setProcessDefinition(processDefinition);
 
-        //执行
-        WorkFlowAgendaHelper.getAgenda().add(new StartOperation(executionEntity)).execute();
+        //执行开始节点操作
+        startOperation.execute(executionEntity);
         return processInstance;
     }
 

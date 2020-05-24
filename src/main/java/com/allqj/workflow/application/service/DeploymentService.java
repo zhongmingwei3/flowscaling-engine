@@ -4,7 +4,7 @@ import com.allqj.workflow.engine.cmd.ICommand;
 import com.allqj.workflow.engine.deployment.IProcessDeployment;
 import com.allqj.workflow.engine.definition.IProcessDefinition;
 import com.allqj.workflow.engine.deployment.ProcessDeployment;
-import com.allqj.workflow.infrastructure.repository.DeploymentRepository;
+import com.allqj.workflow.infrastructure.repository.IDeploymentRepository;
 import com.allqj.workflow.infrastructure.repository.IDeployCache;
 import com.allqj.workflow.infrastructure.repository.ProcessRepository;
 import org.springframework.stereotype.Component;
@@ -20,12 +20,12 @@ import org.springframework.stereotype.Component;
 public class DeploymentService {
     private final ICommand<IProcessDeployment, String> deployCmd;
     private final ProcessRepository processRepository;
-    private final DeploymentRepository deploymentRepository;
+    private final IDeploymentRepository deploymentRepository;
     private final IDeployCache deployCache;
 
     public DeploymentService(ICommand<IProcessDeployment, String> deployCmd,
                              ProcessRepository processRepository,
-                             DeploymentRepository deploymentRepository,
+                             IDeploymentRepository deploymentRepository,
                              IDeployCache deployCache) {
         this.deployCmd = deployCmd;
         this.processRepository = processRepository;

@@ -1,13 +1,13 @@
 package com.allqj.workflow.infrastructure.repository.impl;
 
 import com.allqj.workflow.engine.deployment.IProcessDeployment;
-import com.allqj.workflow.infrastructure.repository.DeploymentRepository;
+import com.allqj.workflow.infrastructure.repository.IDeploymentRepository;
 import com.allqj.workflow.infrastructure.repository.dataobj.ProcessDeploymentDO;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DeploymentRepositoryImpl implements DeploymentRepository {
+public class DeploymentRepositoryImpl implements IDeploymentRepository {
 
     private final MongoTemplate mongoTemplate;
 
